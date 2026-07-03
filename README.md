@@ -1,5 +1,11 @@
 # PromptGuard
 
+[![Maven Central](https://img.shields.io/maven-central/v/dev.randos/prompt-guard.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/dev.randos/prompt-guard)
+[![Android CI](https://github.com/vsnappy1/prompt-guard/actions/workflows/workflow.yml/badge.svg?branch=main)](https://github.com/vsnappy1/prompt-guard/actions/workflows/workflow.yml)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.2.21-7F52FF.svg?logo=kotlin)](https://kotlinlang.org/)
+[![JVM](https://img.shields.io/badge/JVM-8%2B-orange.svg)](https://www.oracle.com/java/)
+
 PromptGuard is a Kotlin-first toolkit for building privacy-aware AI workflows in Android and JVM applications.
 
 The goal is simple: help developers detect sensitive values, redact them, build safer AI requests, avoid raw prompt logging, and validate AI output before it is displayed or stored.
