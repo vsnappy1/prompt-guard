@@ -37,7 +37,6 @@ jobs:
       run:  ./gradlew jacocoCoverageVerification
 
     - name: Publish to Maven Central
-      if: github.event_name == 'workflow_dispatch'
       run: ./gradlew :prompt-guard:publishToMavenCentral
       env:
         ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_USERNAME }}
