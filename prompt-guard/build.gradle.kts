@@ -2,9 +2,12 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     `maven-publish`
+    jacoco
     alias(libs.plugins.ktlint)
     alias(libs.plugins.kotlin.jvm)
 }
+
+apply(from = "../gradle/jacoco.gradle.kts")
 
 group = "dev.randos"
 version = "0.1.0"
