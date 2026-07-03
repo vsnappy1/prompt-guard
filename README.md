@@ -4,7 +4,29 @@ PromptGuard is a Kotlin-first toolkit for building privacy-aware AI workflows in
 
 The goal is simple: help developers detect sensitive values, redact them, build safer AI requests, avoid raw prompt logging, and validate AI output before it is displayed or stored.
 
+## Current Status
+
 PromptGuard is currently in early MVP development.
+
+The first implemented capability is runtime sensitive data detection. This scanner checks text for common sensitive values before that text is sent to AI providers, logs, analytics, crash reports, or other sinks.
+
+Implemented:
+
+* Sensitive Data Detection
+* Default regex-based detectors
+* Custom detector support
+* Source position metadata
+* Severity metadata
+* Overlap deduplication
+
+Planned next:
+
+* Redaction Engine
+* Privacy-Aware Prompt Request Builder
+* Safe Metadata Logging
+* AI Output Validation
+* Configurable privacy policies
+* Optional provider adapters
 
 ## Why This Exists
 
@@ -27,6 +49,8 @@ PromptGuard provides reusable runtime building blocks for safer AI data handling
 The MVP focuses on five practical features.
 
 ### 1. Sensitive Data Detection
+
+Status: ✅ implemented. See the [Sensitive Data Scanner docs](docs/scanner/README.md).
 
 Scan text for common sensitive patterns before it is used in an AI request.
 
