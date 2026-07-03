@@ -184,11 +184,10 @@ Short-term:
 * safe metadata logger,
 * output validation,
 * unit tests,
-* Android sample usage.
+* local Maven publishing for testing in other projects.
 
 Later:
 
-* Android-specific helpers,
 * configurable privacy policies,
 * stricter fail-fast modes,
 * optional provider adapters,
