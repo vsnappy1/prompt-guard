@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
-    id("maven-publish")
+    `maven-publish`
 }
 
 group = "dev.randos"
@@ -12,6 +12,14 @@ kotlin {
 
 java {
     withSourcesJar()
+}
+
+dependencies {
+    testImplementation(kotlin("test"))
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 publishing {
