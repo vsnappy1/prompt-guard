@@ -2,8 +2,9 @@ package dev.randos.promptguard.scanner.detectors
 
 import dev.randos.promptguard.type.SensitiveDataType
 import dev.randos.promptguard.type.Severity
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.junit.Test
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 
 class EmailDetectorTest {
     @Test
@@ -30,6 +31,6 @@ class EmailDetectorTest {
 
     @Test
     fun `find ignores malformed email address`() {
-        assertEquals(emptyList(), EmailDetector.find("Contact user@example"))
+        assertTrue(EmailDetector.find("Contact user@example").isEmpty())
     }
 }

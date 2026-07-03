@@ -5,13 +5,15 @@ import dev.randos.promptguard.scanner.SensitiveDataScanner
 import dev.randos.promptguard.scanner.SensitiveDetector
 import dev.randos.promptguard.type.SensitiveDataType
 import dev.randos.promptguard.type.Severity
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.junit.Test
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import kotlin.collections.emptyList
 
 class SensitiveDataScannerTest {
     @Test
     fun `scan returns empty list for blank text`() {
-        assertEquals(emptyList(), SensitiveDataScanner.scan("  "))
+        assertTrue(SensitiveDataScanner.scan("  ").isEmpty())
     }
 
     @Test

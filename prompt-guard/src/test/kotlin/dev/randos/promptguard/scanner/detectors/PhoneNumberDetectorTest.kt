@@ -2,8 +2,9 @@ package dev.randos.promptguard.scanner.detectors
 
 import dev.randos.promptguard.type.SensitiveDataType
 import dev.randos.promptguard.type.Severity
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.junit.Test
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 
 class PhoneNumberDetectorTest {
     @Test
@@ -26,6 +27,6 @@ class PhoneNumberDetectorTest {
 
     @Test
     fun `find ignores phone-like text inside words`() {
-        assertEquals(emptyList(), PhoneNumberDetector.find("ref3125550198code"))
+        assertTrue(PhoneNumberDetector.find("ref3125550198code").isEmpty())
     }
 }

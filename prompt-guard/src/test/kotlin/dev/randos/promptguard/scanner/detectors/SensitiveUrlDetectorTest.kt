@@ -2,8 +2,9 @@ package dev.randos.promptguard.scanner.detectors
 
 import dev.randos.promptguard.type.SensitiveDataType
 import dev.randos.promptguard.type.Severity
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.junit.Test
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 
 class SensitiveUrlDetectorTest {
     @Test
@@ -30,6 +31,7 @@ class SensitiveUrlDetectorTest {
 
     @Test
     fun `find ignores url without sensitive query parameter`() {
-        assertEquals(emptyList(), SensitiveUrlDetector.find("https://example.com/callback?state=ready"))
+        assertTrue(SensitiveUrlDetector.find("https://example.com/callback?state=ready").isEmpty())
+
     }
 }

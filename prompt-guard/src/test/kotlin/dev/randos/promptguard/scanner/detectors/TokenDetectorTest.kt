@@ -2,8 +2,9 @@ package dev.randos.promptguard.scanner.detectors
 
 import dev.randos.promptguard.type.SensitiveDataType
 import dev.randos.promptguard.type.Severity
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.junit.Test
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 
 class TokenDetectorTest {
     @Test
@@ -26,6 +27,6 @@ class TokenDetectorTest {
 
     @Test
     fun `find ignores short token values`() {
-        assertEquals(emptyList(), TokenDetector.find("token abc"))
+        assertTrue(TokenDetector.find("token abc").isEmpty())
     }
 }

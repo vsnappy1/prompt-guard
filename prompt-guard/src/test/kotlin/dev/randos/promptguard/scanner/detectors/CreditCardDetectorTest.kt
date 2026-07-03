@@ -2,8 +2,9 @@ package dev.randos.promptguard.scanner.detectors
 
 import dev.randos.promptguard.type.SensitiveDataType
 import dev.randos.promptguard.type.Severity
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.junit.Test
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 
 class CreditCardDetectorTest {
     @Test
@@ -18,7 +19,7 @@ class CreditCardDetectorTest {
 
     @Test
     fun `find ignores luhn-invalid card number`() {
-        assertEquals(emptyList(), CreditCardDetector.find("Card 4111 1111 1111 1112"))
+        assertTrue(CreditCardDetector.find("Card 4111 1111 1111 1112").isEmpty())
     }
 
     @Test

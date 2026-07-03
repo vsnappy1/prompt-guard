@@ -1,26 +1,10 @@
 plugins {
-    alias(libs.plugins.kotlin.jvm)
     `maven-publish`
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "dev.randos"
 version = "0.1.0"
-
-kotlin {
-    jvmToolchain(11)
-}
-
-java {
-    withSourcesJar()
-}
-
-dependencies {
-    testImplementation(kotlin("test"))
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
 
 publishing {
     publications {
@@ -32,4 +16,17 @@ publishing {
             version = project.version.toString()
         }
     }
+}
+
+dependencies {
+    testImplementation(libs.junit)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+kotlin {
+    jvmToolchain(8)
 }
