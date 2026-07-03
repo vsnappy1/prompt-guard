@@ -12,10 +12,7 @@ object SensitiveDataScanner {
     /**
      * Returns all non-overlapping sensitive findings in their original text order.
      */
-    fun scan(
-        text: String,
-        detectors: List<SensitiveDetector> = defaultDetectors
-    ): List<SensitiveFinding> {
+    fun scan(text: String, detectors: List<SensitiveDetector> = defaultDetectors): List<SensitiveFinding> {
         if (text.isBlank()) return emptyList()
 
         return detectors

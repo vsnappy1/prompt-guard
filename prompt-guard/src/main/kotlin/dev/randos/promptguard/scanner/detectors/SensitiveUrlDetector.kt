@@ -7,7 +7,8 @@ internal object SensitiveUrlDetector : RegexSensitiveDetector(
     type = SensitiveDataType.URL_WITH_SENSITIVE_QUERY,
     severity = Severity.HIGH,
     regex = Regex(
-        pattern = """https?://[^\s"'<>]+[?&](?:token|api[_-]?key|key|secret|password|pwd|auth|signature|sig|session)[^"' <>\r\n]*""",
+        pattern = """https?://[^\s"'<>]+[?&]""" +
+            """(?:token|api[_-]?key|key|secret|password|pwd|auth|signature|sig|session)[^"' <>\r\n]*""",
         options = setOf(RegexOption.IGNORE_CASE)
     )
 )

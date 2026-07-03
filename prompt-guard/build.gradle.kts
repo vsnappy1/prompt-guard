@@ -1,5 +1,8 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
 plugins {
     `maven-publish`
+    alias(libs.plugins.ktlint)
     alias(libs.plugins.kotlin.jvm)
 }
 
@@ -29,4 +32,10 @@ java {
 
 kotlin {
     jvmToolchain(8)
+}
+
+ktlint {
+    reporters {
+        reporter(ReporterType.HTML)
+    }
 }

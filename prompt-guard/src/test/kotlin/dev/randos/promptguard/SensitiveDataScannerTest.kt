@@ -5,10 +5,10 @@ import dev.randos.promptguard.scanner.SensitiveDataScanner
 import dev.randos.promptguard.scanner.SensitiveDetector
 import dev.randos.promptguard.type.SensitiveDataType
 import dev.randos.promptguard.type.Severity
-import org.junit.Test
+import kotlin.collections.emptyList
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
-import kotlin.collections.emptyList
+import org.junit.Test
 
 class SensitiveDataScannerTest {
     @Test
@@ -110,21 +110,16 @@ class SensitiveDataScannerTest {
         assertEquals("secret-token", findings.single().value)
     }
 
-    private fun fixedDetector(
-        value: String,
-        startIndex: Int,
-        endIndex: Int,
-        type: SensitiveDataType,
-        severity: Severity
-    ): SensitiveDetector = SensitiveDetector {
-        listOf(
-            SensitiveFinding(
-                type = type,
-                value = value,
-                startIndex = startIndex,
-                endIndex = endIndex,
-                severity = severity
+    private fun fixedDetector(value: String, startIndex: Int, endIndex: Int, type: SensitiveDataType, severity: Severity): SensitiveDetector =
+        SensitiveDetector {
+            listOf(
+                SensitiveFinding(
+                    type = type,
+                    value = value,
+                    startIndex = startIndex,
+                    endIndex = endIndex,
+                    severity = severity
+                )
             )
-        )
-    }
+        }
 }
