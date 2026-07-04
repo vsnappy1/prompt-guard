@@ -24,10 +24,10 @@ Implemented:
 * Source position metadata
 * Severity metadata
 * Overlap deduplication
+* Redaction Engine
 
 Planned next:
 
-* Redaction Engine
 * Privacy-Aware Prompt Request Builder
 * Safe Metadata Logging
 * AI Output Validation
@@ -77,6 +77,8 @@ listOf(
 
 ### 2. Redaction Engine
 
+Status: ✅ implemented. See the [Redaction Engine docs](docs/redaction/README.md).
+
 Replace or mask sensitive values before prompt construction.
 
 ```kotlin
@@ -91,7 +93,7 @@ Output:
 My email is [EMAIL_1]
 ```
 
-Planned redaction modes:
+Supported redaction modes:
 
 ```text
 REPLACE  -> [EMAIL_1]
